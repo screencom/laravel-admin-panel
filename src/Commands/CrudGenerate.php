@@ -352,7 +352,7 @@ class CrudGenerate extends Command
     public function createMigrationFile()
     {
         // create migration file
-        $migrations_file = $this->config['paths']['migrations'] . '/' . date('Y_m_d') . '_000000_create_' . $this->replaces['{model_variable}'] . '_table.php';
+        $migrations_file = $this->config['paths']['migrations'] . '/' . date('Y_m_d_His') . '_create_' . $this->replaces['{model_variable}'] . '_table.php';
         $migrations_stub = $this->files->get($this->config['paths']['stubs'] . '/migrations.stub');
         $this->files->put($migrations_file, $this->replace($migrations_stub));
         $this->line('Migration file created: <info>' . $migrations_file . '</info>');
